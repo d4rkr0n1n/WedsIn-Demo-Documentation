@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', port: process.env.PORT });
 });
+router.get('/health-check', (req, res) => res.send("OK"));
 
 module.exports = router;
